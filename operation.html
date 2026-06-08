@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>教師用 運用マニュアル｜マンダラ・ノート</title>
+<style>
+:root{--g:#1f7a5a;--g2:#2f9e74;--ink:#23302b;--muted:#6b7b73;--line:#dfe7e2;--bg:#f6faf8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic UI",Meiryo,sans-serif;
+  line-height:1.85;font-size:16px;}
+.bar{background:var(--g);color:#fff;padding:10px 16px;display:flex;gap:12px;align-items:center;
+  position:sticky;top:0;z-index:10;box-shadow:0 1px 6px rgba(0,0,0,.12)}
+.bar a{color:#fff;text-decoration:none;font-size:14px;opacity:.95}
+.bar a:hover{text-decoration:underline}
+.bar .brand{font-weight:700}
+.wrap{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 28px;
+  box-shadow:0 2px 14px rgba(31,122,90,.06)}
+h1{font-size:26px;line-height:1.4;margin:.2em 0 .6em;color:var(--g)}
+h2{font-size:20px;margin:1.8em 0 .6em;padding-bottom:.3em;border-bottom:2px solid var(--line);color:var(--ink)}
+h3{font-size:17px;margin:1.4em 0 .5em;color:var(--g)}
+h4{font-size:15px;margin:1.1em 0 .4em;color:var(--muted)}
+a{color:var(--g2)}
+p,li{font-size:16px}
+ul,ol{padding-left:1.4em}
+li{margin:.25em 0}
+code{background:#eef5f1;border:1px solid var(--line);border-radius:5px;padding:.08em .4em;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:.92em}
+pre{background:#0f2b22;color:#e8f5ee;border-radius:10px;padding:14px 16px;overflow:auto}
+pre code{background:none;border:0;color:inherit;padding:0}
+blockquote{margin:1em 0;padding:.7em 1em;background:#eef7f2;border-left:5px solid var(--g2);border-radius:0 8px 8px 0}
+blockquote p{margin:.3em 0}
+table{border-collapse:collapse;width:100%;margin:1em 0;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef5f1;font-weight:700;white-space:nowrap}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.toc-title{font-weight:700;color:var(--muted);font-size:14px;margin-top:.4em}
+.foot{text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
+/* index landing */
+.lead{color:var(--muted);font-size:15px}
+.tiles{display:grid;gap:16px;margin:22px 0}
+.tile{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;background:#fff;transition:.15s}
+.tile:hover{border-color:var(--g2);box-shadow:0 4px 16px rgba(31,122,90,.12);transform:translateY(-1px)}
+.tile .t{font-size:18px;font-weight:700;color:var(--g)}
+.tile .d{font-size:14px;color:var(--muted);margin-top:4px}
+@media print{.bar{display:none}.card{box-shadow:none;border:0}body{background:#fff}}
+</style>
+</head><body>
+<div class="bar"><span class="brand">🍀 マンダラ・ノート</span>
+<a href="./">マニュアル一覧</a>
+<a href="setup.html">導入</a>
+<a href="operation.html">運用</a></div>
+<div class="wrap"><div class="card">
+<h1 id="_1">マンダラ・ノート 教師用 運用マニュアル</h1>
+<p>導入（デプロイ）が終わったあと、<strong>授業で使う</strong>ためのマニュアルです。</p>
+<blockquote>
+<p>まだ導入していない場合は、先に <strong><a href="setup.html">教師用 導入マニュアル</a></strong> を進めてください。</p>
+</blockquote>
+<hr />
+<h2 id="_2">もくじ</h2>
+<ul>
+<li><a href="#いちばん簡単名簿だけで使う">いちばん簡単：名簿だけで使う</a></li>
+<li><a href="#授業に合わせて作り込む手引き設定シート">授業に合わせて作り込む（手引き設定シート）</a></li>
+<li><a href="#プラン保管で観点を切り替える">プラン保管で観点を切り替える</a></li>
+<li><a href="#児童の画面のつかいかた">児童の画面のつかいかた</a></li>
+<li><a href="#マンダラ--作文への流れ">マンダラ → 作文への流れ</a></li>
+<li><a href="#記録データを確認する">記録（データ）を確認する</a></li>
+<li><a href="#運用でこまったらfaq">運用でこまったら（FAQ）</a></li>
+<li><a href="#個人情報安全について">個人情報・安全について</a></li>
+</ul>
+<hr />
+<h2 id="_3">いちばん簡単：名簿だけで使う</h2>
+<p><strong>名簿を入れてデプロイしただけで、もう授業に使えます。</strong> 観点や授業設定は未設定でもOK（児童は手引きの「教科プリセット」から型を選んで書けます）。
+まずはこの状態で1回触ってみるのがおすすめです。</p>
+<h2 id="_4">授業に合わせて作り込む（手引き設定シート）</h2>
+<p>授業の中身は <strong><code>手引き設定</code> シート1枚</strong>で設定します（すべて任意）。<strong>授業設定・教師からは B列</strong>に入力します。</p>
+<p><strong>記入例（社会5年「これからの食料生産」）</strong></p>
+<table>
+<thead>
+<tr>
+<th>セル</th>
+<th>項目</th>
+<th>入力例（B列）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B4</td>
+<td>🔑 授業ID</td>
+<td>社会05</td>
+</tr>
+<tr>
+<td>B5</td>
+<td>🎯 テーマ</td>
+<td>これからの食料生産</td>
+</tr>
+<tr>
+<td>B6〜B13</td>
+<td>🟦 カテゴリ名①〜⑧</td>
+<td>生産量／輸入／安全／ねだん／働く人／環境／これから／なんでも</td>
+</tr>
+<tr>
+<td>B15〜B22</td>
+<td>👨‍🏫 教師から 観点①〜⑧</td>
+<td>どんな事実がある？／なぜそうなっている？／よい点は？／困る点は？／だれが関わる？／自分の生活とつながる？／これからどうすべき？／ひとことでまとめると？</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>「／」は説明用の区切りです。<strong>実際は B6・B7… ／ B15・B16… と1セルずつ</strong>入れます。</li>
+<li><strong>🧭 授業設定（B4〜B13）</strong>：入れたテキストが児童画面のセルの中身として表示されます。空欄なら児童が自由に書きます（ロック機能はありません）。</li>
+<li><strong>👨‍🏫 教師から（B15〜B22）</strong>：1つでも入れると、児童の手引きに「👨‍🏫 教師から」ボタンが出ます。観点は<strong>マスのヒント</strong>としても表示されます。</li>
+<li><strong>📚 教科プリセット（B24以下）</strong>：「アイデアを広げる／問いを立てる／道徳で考える」の3つは触らなくても児童が選べます。変えたいときだけ <strong>C列</strong>に入力（基本は B列、変更は C列）。</li>
+<li>設定を変えたら、児童は<strong>再ログイン</strong>で反映されます。</li>
+</ul>
+<h2 id="_5">プラン保管で観点を切り替える</h2>
+<p><code>プラン保管</code> シートに、よく使う観点を <strong>A・B・C の3列</strong>で控えておけます。</p>
+<p><strong>使い方</strong>：使いたい列の観点①〜⑧（8マス）をコピー → <strong><code>手引き設定</code> の「教師から」欄 B15</strong> に「<strong>値のみ貼り付け（Ctrl+Shift+V）</strong>」。これで観点が丸ごと切り替わります（授業の前に切り替え、児童は再ログインで反映）。</p>
+<h2 id="_6">児童の画面のつかいかた</h2>
+<p>導入時にこれだけ押さえれば十分です。</p>
+<ul>
+<li>まん中に<strong>テーマ</strong>、まわりの8マスに<strong>考え</strong>を書く（テーマと各中央セルは<strong>太わく</strong>で目立つ・中央ぞろえ）。</li>
+<li>マス右上の <strong>「開く」</strong> で小マンダラ（さらに8マス）に入り、<strong>「← 大マンダラへもどる」</strong> で戻る。</li>
+<li>上部の <strong>「📋 手引き」</strong>＝考える観点（ヒント）、<strong>「🔀 ならべかえ」</strong>＝マスの場所を入れかえ（大・小どちらも）。</li>
+<li>文字は <strong>「あ−／あ＋」</strong>、よせ（左・中・右）は <strong>「⬅ よせ」</strong>（マスごと）。</li>
+<li><strong>「⋯ もっと」</strong> に「🔤 つなぎ言葉」「📝 さくぶんメモ（箇条書き化）」。</li>
+<li>右上の <strong>「📂 データよびだし」</strong> で前の続きを開ける。<strong>「記録（先生に送る）」</strong> で先生に届く。</li>
+<li>※マスの「番地」表示はありません（見ながら書く・並べ替えるので不要にしています）。</li>
+</ul>
+<h2 id="_7">マンダラ → 作文への流れ</h2>
+<ol>
+<li>マンダラで<strong>考えを広げ・深める</strong>。</li>
+<li><strong>「🔀 ならべかえ」</strong>で書きたい順番（時計回り）に並べ替える。</li>
+<li><strong>「📝 さくぶんメモ」</strong>で箇条書きの下書きを作る（テーマ＝見出し、入口＝1.2.3.、小マス＝・）。</li>
+<li>それを<strong>コピーして Google ドキュメント等に貼り</strong>、文章に仕上げる（「つなぎ言葉」も活用）。</li>
+</ol>
+<blockquote>
+<p>マンダラ・ノートは「<strong>考えをねる道具</strong>」、ドキュメントは「<strong>文章にする道具</strong>」と役割分担すると使いやすいです。</p>
+</blockquote>
+<h2 id="_8">記録（データ）を確認する</h2>
+<p>児童が「記録（先生に送る）」を押すと、<code>データ</code> シートに保存されます（チャンネルごとに1行）。</p>
+<ul>
+<li><strong>F列＝チャンネル</strong>：<code>lesson</code>＝📘先生の課題 ／ <code>free_A</code>＝📝じぶんノート</li>
+<li><strong>G列＝授業ID</strong>（先生の課題のみ。<code>手引き設定</code> の B4 の値）</li>
+<li>児童は <strong>「📂 データよびだし」</strong> から、過去の記録を選んで<strong>授業をまたいで続き</strong>を書けます（いらない記録は本人が 🗑️ で削除も）。</li>
+</ul>
+<h2 id="faq">運用でこまったら（FAQ）</h2>
+<ul>
+<li><strong>「教師から」モードが出ない</strong> → <code>手引き設定</code> の <strong>B15〜B22</strong> に観点が入っているか確認（空だと出ません）。</li>
+<li><strong>テーマ・カテゴリ名・観点が反映されない</strong> → <code>手引き設定</code> の該当セル（テーマ B5／カテゴリ名 B6〜B13／観点 B15〜B22）を確認。設定後は児童の<strong>再ログイン</strong>で反映。</li>
+<li><strong>じぶんノートのデータも届く？</strong> → はい。両チャンネルとも <code>データ</code> シートに保存されます（F列で絞り込み）。</li>
+<li><strong>授業IDを変えたら前のデータは？</strong> → 残ります。新しい授業IDの分が新しい行で追加されます。</li>
+<li><strong>コードを直したのに反映されない</strong> → 保存だけでは反映されません。<strong>「新しいバージョン」で再デプロイ</strong>してください（→ <a href="setup.html#コードを更新したとき再デプロイ">導入マニュアル</a>）。</li>
+</ul>
+<h2 id="_9">個人情報・安全について</h2>
+<ul>
+<li>データは<strong>あなたのスプレッドシート内</strong>だけに保存されます。外部のサーバーやサービスには送りません。</li>
+<li>名簿のパスワードは本人にだけ伝え、印刷配布などで管理してください。</li>
+<li>児童名・成績などの個人情報は、アプリ外（外部サービス）に貼り出さないでください。</li>
+</ul>
+<hr />
+<p>🍀 <em>マンダラ・ノート — 考えを広げ、並べ替え、作文へ。</em></p>
+<p class="foot">🍀 マンダラ・ノート — 考えを広げ、並べ替え、作文へ。</p>
+</div></div>
+</body></html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>教師用 導入マニュアル｜マンダラ・ノート</title>
+<style>
+:root{--g:#1f7a5a;--g2:#2f9e74;--ink:#23302b;--muted:#6b7b73;--line:#dfe7e2;--bg:#f6faf8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic UI",Meiryo,sans-serif;
+  line-height:1.85;font-size:16px;}
+.bar{background:var(--g);color:#fff;padding:10px 16px;display:flex;gap:12px;align-items:center;
+  position:sticky;top:0;z-index:10;box-shadow:0 1px 6px rgba(0,0,0,.12)}
+.bar a{color:#fff;text-decoration:none;font-size:14px;opacity:.95}
+.bar a:hover{text-decoration:underline}
+.bar .brand{font-weight:700}
+.wrap{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 28px;
+  box-shadow:0 2px 14px rgba(31,122,90,.06)}
+h1{font-size:26px;line-height:1.4;margin:.2em 0 .6em;color:var(--g)}
+h2{font-size:20px;margin:1.8em 0 .6em;padding-bottom:.3em;border-bottom:2px solid var(--line);color:var(--ink)}
+h3{font-size:17px;margin:1.4em 0 .5em;color:var(--g)}
+h4{font-size:15px;margin:1.1em 0 .4em;color:var(--muted)}
+a{color:var(--g2)}
+p,li{font-size:16px}
+ul,ol{padding-left:1.4em}
+li{margin:.25em 0}
+code{background:#eef5f1;border:1px solid var(--line);border-radius:5px;padding:.08em .4em;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:.92em}
+pre{background:#0f2b22;color:#e8f5ee;border-radius:10px;padding:14px 16px;overflow:auto}
+pre code{background:none;border:0;color:inherit;padding:0}
+blockquote{margin:1em 0;padding:.7em 1em;background:#eef7f2;border-left:5px solid var(--g2);border-radius:0 8px 8px 0}
+blockquote p{margin:.3em 0}
+table{border-collapse:collapse;width:100%;margin:1em 0;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef5f1;font-weight:700;white-space:nowrap}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.toc-title{font-weight:700;color:var(--muted);font-size:14px;margin-top:.4em}
+.foot{text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
+/* index landing */
+.lead{color:var(--muted);font-size:15px}
+.tiles{display:grid;gap:16px;margin:22px 0}
+.tile{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;background:#fff;transition:.15s}
+.tile:hover{border-color:var(--g2);box-shadow:0 4px 16px rgba(31,122,90,.12);transform:translateY(-1px)}
+.tile .t{font-size:18px;font-weight:700;color:var(--g)}
+.tile .d{font-size:14px;color:var(--muted);margin-top:4px}
+@media print{.bar{display:none}.card{box-shadow:none;border:0}body{background:#fff}}
+</style>
+</head><body>
+<div class="bar"><span class="brand">🍀 マンダラ・ノート</span>
+<a href="./">マニュアル一覧</a>
+<a href="setup.html">導入</a>
+<a href="operation.html">運用</a></div>
+<div class="wrap"><div class="card">
+<h1 id="_1">マンダラ・ノート 教師用 導入マニュアル</h1>
+<p>このアプリを、自分の Google アカウントで動かして授業に使えるようにするまでの手順です。
+<strong>Google Apps Script（GAS）を初めて使う先生</strong>でも、このとおりに進めればデプロイ（公開）まで到達できます。所要 約30分。</p>
+<blockquote>
+<p>運用（授業での使い方）は <strong><a href="operation.html">教師用 運用マニュアル</a></strong> をご覧ください。</p>
+</blockquote>
+<hr />
+<h2 id="_2">もくじ</h2>
+<ul>
+<li><a href="#必要なもの">必要なもの</a></li>
+<li><a href="#step-1-スプレッドシートを用意">Step 1. スプレッドシートを用意</a></li>
+<li><a href="#step-2-スクリプトエディタを開く">Step 2. スクリプトエディタを開く</a></li>
+<li><a href="#step-3-コードを貼る2ファイル">Step 3. コードを貼る（2ファイル）</a></li>
+<li><a href="#step-4-シートを初期セットアップ承認">Step 4. シートを初期セットアップ＋承認</a></li>
+<li><a href="#step-5-名簿を入れる">Step 5. 名簿を入れる</a></li>
+<li><a href="#step-6-ウェブアプリとして公開デプロイ最重要">Step 6. ウェブアプリとして公開（デプロイ）★最重要</a></li>
+<li><a href="#導入でつまずいたらfaq">導入でつまずいたら（FAQ）</a></li>
+<li><a href="#コードを更新したとき再デプロイ">コードを更新したとき（再デプロイ）</a></li>
+</ul>
+<hr />
+<h2 id="_3">必要なもの</h2>
+<ul>
+<li><strong>Google アカウント</strong>（学校または個人）</li>
+<li><strong>Google スプレッドシート</strong>（無料）</li>
+<li>配布されたコード2つ：<strong><code>Code.gs</code></strong> と <strong><code>index.html</code></strong></li>
+<li>児童が使う<strong>タブレット等のブラウザ</strong></li>
+</ul>
+<blockquote>
+<p>💡 用語ミニ知識（こわくありません）
+- <strong>GAS（Google Apps Script）</strong>＝ Google のサービスにくっつく簡単なプログラム。スプレッドシートから Web アプリを作れます。
+- <strong>デプロイ</strong>＝ 作ったものを「Web アプリとして公開」して、URL を発行すること。
+- やることは結局「<strong>コードを貼る → 公開する</strong>」だけです。</p>
+</blockquote>
+<hr />
+<h2 id="step-1">Step 1. スプレッドシートを用意</h2>
+<ol>
+<li>Google ドライブで<strong>新しいスプレッドシート</strong>を作る。</li>
+<li>名前を分かりやすく（例：<code>マンダラノート_5年1組</code>）。</li>
+</ol>
+<blockquote>
+<p>このスプレッドシートが「先生用の管理画面＆データの保存先」になります。</p>
+</blockquote>
+<h2 id="step-2">Step 2. スクリプトエディタを開く</h2>
+<ol>
+<li>スプレッドシートのメニュー <strong>「拡張機能」→「Apps Script」</strong> をクリック。</li>
+<li>新しいタブで<strong>スクリプトエディタ</strong>が開きます。</li>
+</ol>
+<h2 id="step-3-2">Step 3. コードを貼る（2ファイル）</h2>
+<p><strong>(A) <code>Code.gs</code>（サーバー側）</strong>
+1. 最初からある <code>コード.gs</code>（または <code>Code.gs</code>）を開く。
+2. 中身を<strong>すべて選択して削除</strong>（Ctrl+A → Delete）。
+3. 配布の <strong><code>Code.gs</code></strong> の中身を<strong>全部貼り付け</strong>。
+4. <strong>保存</strong>（Ctrl+S または 💾）。</p>
+<p><strong>(B) <code>index</code>（児童画面のHTML）</strong>
+1. 左の「ファイル」欄の <strong>＋ → 「HTML」</strong> を選ぶ。
+2. ファイル名を <strong><code>index</code></strong> にする（★ここ重要）。
+   - <strong>必ず「index」</strong>。<code>index.html</code> と打っても拡張子は自動で付くので <strong><code>index</code> だけ</strong>でOK。名前が違うと画面が真っ白になります。
+3. 出てきたHTMLの中身を<strong>すべて削除</strong>し、配布の <strong><code>index.html</code></strong> の中身を<strong>全部貼り付け</strong>。
+4. <strong>保存</strong>（Ctrl+S）。</p>
+<blockquote>
+<p>✅ これでファイルは <code>Code.gs</code> と <code>index</code>（HTML）の2つになります。</p>
+</blockquote>
+<h2 id="step-4">Step 4. シートを初期セットアップ＋承認</h2>
+<ol>
+<li>スプレッドシートのタブに戻り、<strong>ページを再読み込み</strong>（F5）。</li>
+<li>数秒で上部メニューに <strong>「🍀 マンダラ管理」</strong> が増えます（出なければもう一度再読み込み）。</li>
+<li><strong>「🍀 マンダラ管理 → 🛠️ シートを初期セットアップする」</strong> をクリック。</li>
+<li>初回は<strong>承認画面</strong>が出ます（自分のスクリプトを自分のスプシで動かす許可）。次の順で進めます：</li>
+<li>「権限を確認」→ 自分の Google アカウントを選ぶ</li>
+<li>「このアプリは Google で確認されていません」と出たら → <strong>「詳細」→「（プロジェクト名）に移動」</strong></li>
+<li>「許可」をクリック<blockquote>
+<p>これは<strong>自分が用意したスクリプトを、自分のスプレッドシートで動かす</strong>ための許可です。外部にデータは出ません。</p>
+</blockquote>
+</li>
+<li>完了すると <strong>名簿・手引き設定・プラン保管・データ</strong> の4シートが自動でできます。</li>
+</ol>
+<h2 id="step-5">Step 5. 名簿を入れる</h2>
+<p><code>名簿</code> シートに、ログインさせたい児童を入力します（ここに載っている子だけログインできます）。</p>
+<table>
+<thead>
+<tr>
+<th>A列</th>
+<th>B列</th>
+<th>C列</th>
+<th>D列</th>
+<th>E列</th>
+<th>F列</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通し番号（参考）</td>
+<td>学年</td>
+<td>クラス</td>
+<td>名簿番号</td>
+<td>名前</td>
+<td>パスワード</td>
+</tr>
+<tr>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>1</td>
+<td>山田 太郎</td>
+<td>hana123</td>
+</tr>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>1</td>
+<td>2</td>
+<td>鈴木 花子</td>
+<td>sora456</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ログインは <strong>B〜D・F列（学年・クラス・名簿番号・パスワード）</strong>を使います（A列の番号はログインに使いません）。</li>
+<li>学年・クラス・番号・パスワードは <strong>半角</strong>で入力してください（児童画面でも全角だと文字が赤くなって気づけます）。</li>
+<li>⚠️ パスワードは本人にだけ伝える。印刷して個別に配るのが安全です。</li>
+</ul>
+<h2 id="step-6">Step 6. ウェブアプリとして公開（デプロイ）★最重要</h2>
+<p>ここが初めての方の山場です。ゆっくりどうぞ。</p>
+<ol>
+<li>スクリプトエディタの<strong>右上「デプロイ」→「新しいデプロイ」</strong>。</li>
+<li>左上の<strong>歯車（種類の選択）→「ウェブアプリ」</strong>を選ぶ。</li>
+<li>設定する：</li>
+<li><strong>説明</strong>：任意（例 <code>マンダラノート v1</code>）</li>
+<li><strong>次のユーザーとして実行</strong>：<strong>自分</strong>（あなたのアカウント）← 児童のデータがあなたのスプシに届くために必要</li>
+<li><strong>アクセスできるユーザー</strong>：<strong>全員</strong>（児童が Google ログインなしで使える）<ul>
+<li>学校のポリシーで「全員」が選べない場合は「<strong>◯◯（ドメイン）内の全員</strong>」を選ぶ</li>
+</ul>
+</li>
+<li><strong>「デプロイ」</strong>をクリック → （初回は再度承認）→ <strong>ウェブアプリの URL</strong> が表示されます → <strong>コピー</strong>。</li>
+<li>その URL を児童に配る（ロイロノートのカード・Google Classroom・学校ポータル等）。</li>
+<li><strong>動作確認</strong>：URL を開いて<strong>ログイン画面</strong>が出ればOK。名簿の1人でログインしてみましょう。</li>
+</ol>
+<blockquote>
+<p>💡 URL は後からでも <strong>「🍀 マンダラ管理 → 🌐 Webアプリを開く」</strong> で確認できます。</p>
+</blockquote>
+<h2 id="faq">導入でつまずいたら（FAQ）</h2>
+<ul>
+<li><strong>「🍀 マンダラ管理」が出ない</strong> → スプレッドシートを開き直す（初回は数秒かかります）。</li>
+<li><strong>画面が真っ白／エラー</strong> → HTMLファイルの名前が <strong><code>index</code></strong> になっているか確認（最頻出ミス）。</li>
+<li><strong>「このアプリは確認されていません」で進めない</strong> → 「詳細」→「（プロジェクト名）に移動」→「許可」。自作スクリプトなので問題ありません。</li>
+<li><strong>児童がURLを開けない／ログイン要求される</strong> → デプロイの<strong>「アクセスできるユーザー」が「全員」</strong>になっているか確認。</li>
+<li><strong>データシートが見つからない</strong> → 児童が最初に「記録」を押すと自動でできます。まず1人試す。</li>
+</ul>
+<h2 id="_4">コードを更新したとき（再デプロイ）</h2>
+<p>配布コードが新しくなったら：</p>
+<ol>
+<li><code>Code.gs</code> と <code>index</code> を<strong>新しい中身に貼り替えて保存</strong>。</li>
+<li>スクリプトエディタ右上 <strong>「デプロイ → デプロイを管理」</strong>。</li>
+<li>今のデプロイの <strong>編集（鉛筆 ✏️）→ バージョン：「新しいバージョン」→ デプロイ</strong>。</li>
+</ol>
+<blockquote>
+<p>⚠️ <strong>保存しただけでは児童のURLには反映されません。</strong> 必ず「新しいバージョン」で再デプロイしてください。
+（シートの設定変更＝授業ID・観点などは再デプロイ不要。児童の再ログインで反映されます。）</p>
+</blockquote>
+<hr />
+<p>▶ 次は <strong><a href="operation.html">教師用 運用マニュアル</a></strong> で、授業での使い方を確認しましょう。</p>
+<p class="foot">🍀 マンダラ・ノート — 考えを広げ、並べ替え、作文へ。</p>
+</div></div>
+</body></html>

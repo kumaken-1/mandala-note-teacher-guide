@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>マンダラ・ノート 教師用マニュアル</title>
+<style>
+:root{--g:#1f7a5a;--g2:#2f9e74;--ink:#23302b;--muted:#6b7b73;--line:#dfe7e2;--bg:#f6faf8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic UI",Meiryo,sans-serif;
+  line-height:1.85;font-size:16px;}
+.bar{background:var(--g);color:#fff;padding:10px 16px;display:flex;gap:12px;align-items:center;
+  position:sticky;top:0;z-index:10;box-shadow:0 1px 6px rgba(0,0,0,.12)}
+.bar a{color:#fff;text-decoration:none;font-size:14px;opacity:.95}
+.bar a:hover{text-decoration:underline}
+.bar .brand{font-weight:700}
+.wrap{max-width:760px;margin:0 auto;padding:28px 20px 80px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 28px;
+  box-shadow:0 2px 14px rgba(31,122,90,.06)}
+h1{font-size:26px;line-height:1.4;margin:.2em 0 .6em;color:var(--g)}
+h2{font-size:20px;margin:1.8em 0 .6em;padding-bottom:.3em;border-bottom:2px solid var(--line);color:var(--ink)}
+h3{font-size:17px;margin:1.4em 0 .5em;color:var(--g)}
+h4{font-size:15px;margin:1.1em 0 .4em;color:var(--muted)}
+a{color:var(--g2)}
+p,li{font-size:16px}
+ul,ol{padding-left:1.4em}
+li{margin:.25em 0}
+code{background:#eef5f1;border:1px solid var(--line);border-radius:5px;padding:.08em .4em;
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;font-size:.92em}
+pre{background:#0f2b22;color:#e8f5ee;border-radius:10px;padding:14px 16px;overflow:auto}
+pre code{background:none;border:0;color:inherit;padding:0}
+blockquote{margin:1em 0;padding:.7em 1em;background:#eef7f2;border-left:5px solid var(--g2);border-radius:0 8px 8px 0}
+blockquote p{margin:.3em 0}
+table{border-collapse:collapse;width:100%;margin:1em 0;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#eef5f1;font-weight:700;white-space:nowrap}
+hr{border:0;border-top:1px solid var(--line);margin:2em 0}
+.toc-title{font-weight:700;color:var(--muted);font-size:14px;margin-top:.4em}
+.foot{text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
+/* index landing */
+.lead{color:var(--muted);font-size:15px}
+.tiles{display:grid;gap:16px;margin:22px 0}
+.tile{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;
+  padding:18px 20px;background:#fff;transition:.15s}
+.tile:hover{border-color:var(--g2);box-shadow:0 4px 16px rgba(31,122,90,.12);transform:translateY(-1px)}
+.tile .t{font-size:18px;font-weight:700;color:var(--g)}
+.tile .d{font-size:14px;color:var(--muted);margin-top:4px}
+@media print{.bar{display:none}.card{box-shadow:none;border:0}body{background:#fff}}
+</style>
+</head><body>
+<div class="bar"><span class="brand">🍀 マンダラ・ノート</span>
+<a href="./">マニュアル一覧</a>
+<a href="setup.html">導入</a>
+<a href="operation.html">運用</a></div>
+<div class="wrap"><div class="card">
+
+<h1>マンダラ・ノート 教師用マニュアル</h1>
+<p class="lead">児童用のマンダラ思考＆作文支援 Web アプリ「<strong>マンダラ・ノート</strong>」を、先生が自分の Google アカウントで導入・運用するためのマニュアルです。</p>
+<div class="tiles">
+  <a class="tile" href="setup.html"><div class="t">📘 導入マニュアル</div>
+    <div class="d">はじめて Google Apps Script（GAS）を使う先生でも、コードを貼って<strong>デプロイ（公開）するまで</strong>を、つまずきポイントつきで案内します。</div></a>
+  <a class="tile" href="operation.html"><div class="t">📗 運用マニュアル</div>
+    <div class="d"><strong>授業での使い方</strong>・設定（手引き設定／プラン保管）・データ確認・困ったときをまとめています。</div></a>
+</div>
+<blockquote><p>🍀 <strong>マンダラ・ノートとは</strong><br>
+子どもがタブレットで「まん中のテーマ → まわりに広げる → さらに深める → 並べ替えて作文の下書きにする」を体験できる、発想＆作文支援ツールです。記録は先生の Google スプレッドシートに届きます。<strong>完全無料・Google Apps Script 製。</strong></p></blockquote>
+<p>まずは <a href="setup.html"><strong>導入マニュアル</strong></a> から始めてください。</p>
+
+<p class="foot">🍀 マンダラ・ノート — 考えを広げ、並べ替え、作文へ。</p>
+</div></div>
+</body></html>
