@@ -160,7 +160,8 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <li>上部の <strong>「💡 ヒント表示」</strong>＝押すたびに <strong>ON/OFF</strong>（大マンダラのマスに教師からの観点が出る／消える。ポップアップは出ません）、<strong>「🔀 ならべかえ」</strong>＝マスの場所を入れかえ（大・小どちらも）。</li>
 <li>文字は <strong>「あ−／あ＋」</strong>、よせ（左・中・右）は <strong>「⬅ よせ」</strong>（マスごと）。</li>
 <li><strong>「⋯ もっと」</strong> に「🔤 つなぎ言葉」「📝 さくぶんメモ（箇条書き化）」。</li>
-<li>右上の <strong>「📂 データよびだし」</strong> で前の続きを開ける。<strong>「記録（先生に送る）」</strong> で先生に届く。</li>
+<li>右上の <strong>「📂 データよびだし」</strong> で前の続きを開ける。<strong>「記録（先生に送る）」</strong> で先生に届く。書いたのに記録していないと、<strong>記録ボタンが赤く「●未記録」</strong>になり、閉じようとすると警告が出ます（記録し忘れ防止）。</li>
+<li>チャンネルバーの右に <strong>「授業ID：◯◯」</strong> が出ます（先生の課題のとき）。いまどの授業で書いているかが一目で分かります。</li>
 <li><strong>ヒントは大マンダラだけ</strong>、しかも <strong>「📘 先生の課題」のときだけ</strong>出ます（児童が自由に使う <strong>「📝 じぶんノート」には出ません</strong>／ボタンも出ません）。<strong>小マンダラのマスには「番地（時計回り 1〜8）」</strong>が表示され、この順番がそのまま <strong>「さくぶんメモ」</strong> の並び順になります。</li>
 </ul>
 <h2 id="_6">マンダラ → 作文への流れ</h2>
@@ -180,6 +181,9 @@ hr{border:0;border-top:1px solid var(--line);margin:2em 0}
 <li><strong>G列＝授業ID</strong>（先生の課題のみ。<code>手引き設定</code> の B4 の値）</li>
 <li>児童は <strong>「📂 データよびだし」</strong> から、過去の記録を選んで<strong>授業をまたいで続き</strong>を書けます（いらない記録は本人が 🗑️ で削除も）。</li>
 </ul>
+<p><strong>授業ごとに記録を分ける</strong>：<code>手引き設定</code> の <strong>B4（授業ID）を 授業02・授業03… と変える</strong>だけで、<code>データ</code> シートに<strong>別の授業の記録として残ります</strong>（同じIDに戻すと上書きされるので、毎回ちがうIDに）。
+- 記録は <strong>押した瞬間の最新の授業ID（B4）</strong> で保存されます。先生が授業の途中でB4を変えても、児童は<strong>再ログインしなくても</strong>次の「記録」で新しい授業に正しく入ります（切り替わった時は児童画面に「先生が授業を切り替えました」と表示）。
+- ※「📝 じぶんノート」は授業IDで分かれず、児童ごとに1つの継続スペースです。</p>
 <h2 id="faq">運用でこまったら（FAQ）</h2>
 <ul>
 <li><strong>ヒント（観点）が出ない</strong> → <code>手引き設定</code> の「教師からヒント」で、<strong>行17のチェックが1つ入っているか</strong>、その列（A/B/C/D）の観点①〜⑧（行18〜25）が入っているか確認（未チェック／空だと出ません）。</li>
